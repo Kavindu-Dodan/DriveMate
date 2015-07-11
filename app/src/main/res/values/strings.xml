@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">DriveMate</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="save">save</string>
+    <string name="send_button">Next</string>
+    <string name="delayKey">TimeDelayKey</string>
+
 </resources>
