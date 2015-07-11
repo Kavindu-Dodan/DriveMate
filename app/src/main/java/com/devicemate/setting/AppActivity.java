@@ -92,11 +92,19 @@ public class AppActivity extends Activity {
 
     public void saveMessage(View view){
 
-        saved =true;
-        SharedPreferences sharedPreferences = getSharedPreferences("TimeDelay",MODE_PRIVATE);
+        EditText editText = (EditText)findViewById(R.id.speedField);
+        String speedText = editText.getText().toString();
+
+        float metersPerSecond =( Float.parseFloat(speedText) * 5f) /18f;
+
+        SharedPreferences sharedPreferences = getSharedPreferences("com.DriveMate",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(getString(R.string.delayKey),seekBar.getProgress());
         editor.commit();
+        editor.putFloat(getString(R.string.speedValues), metersPerSecond);
+        editor.commit();
+
+        saved =true;
 
     }
 

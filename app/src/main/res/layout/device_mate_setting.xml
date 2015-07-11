@@ -13,12 +13,11 @@
         android:layout_x="67dp"
         android:layout_y="147dp"
         android:onClick="saveMessage"
-        android:layout_marginTop="42dp"
-        android:layout_below="@+id/myseekBar"
+        android:layout_marginLeft="67dp"
+        android:layout_marginStart="67dp"
+        android:layout_alignTop="@+id/nextbutton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="54dp"
-        android:layout_marginStart="54dp" />
+        android:layout_alignParentStart="true" />
 
     <Button android:id="@+id/nextbutton"
         android:layout_height="wrap_content"
@@ -26,13 +25,11 @@
         android:text="@string/send_button"
         android:layout_x="63dp"
         android:layout_y="261dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="48dp"
         android:onClick="sendMessage"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="63dp"
-        android:layout_marginEnd="63dp" />
+        android:layout_toRightOf="@+id/savebutton"
+        android:layout_toEndOf="@+id/savebutton" />
 
     <SeekBar android:id="@+id/myseekBar"
         android:layout_width="wrap_content"
@@ -51,9 +48,36 @@
         android:id="@+id/progressValue"
         android:editable="false"
         android:layout_alignBottom="@+id/myseekBar"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/myseekBar"
-        android:layout_toEndOf="@+id/myseekBar" />
+        android:layout_alignRight="@+id/speedField"
+        android:layout_alignEnd="@+id/speedField" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/speedField"
+        android:layout_below="@+id/myseekBar"
+        android:layout_toRightOf="@+id/myseekBar"
+        android:layout_marginTop="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/speedField" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Max speed (Km/h) :"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/speedField"
+        android:layout_toLeftOf="@+id/speedField"
+        android:layout_toStartOf="@+id/speedField" />
 
 </RelativeLayout>
