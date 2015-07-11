@@ -80,4 +80,16 @@
         android:layout_toLeftOf="@+id/speedField"
         android:layout_toStartOf="@+id/speedField" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_above="@+id/progressValue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="501dp"
+        android:layout_marginStart="501dp" />
+
 </RelativeLayout>

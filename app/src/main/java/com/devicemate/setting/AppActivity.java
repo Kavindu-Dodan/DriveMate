@@ -72,16 +72,16 @@ public class AppActivity extends Activity {
                     startActivity(intent);
                     finish();
                 } else {
-                    showDialog();
+                    showDialog("You need to set the time first.");
                 }
             }
 
         });
 	}
 
-    public void showDialog(){
+    public void showDialog(String message){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setMessage("You need to set the time first.")
+        alertDialog.setMessage(message)
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -96,11 +96,23 @@ public class AppActivity extends Activity {
         EditText editText = (EditText)findViewById(R.id.speedField);
         String speedText = editText.getText().toString();
 
+
+        if (speedText.equals("")){
+            showDialog("You need to provide speed value");
+            return;
+        }
+
+        int progressValue= seekBar.getProgress();
+
+        if (progressValue < 5){
+            progressValue = 5;
+        }
+
         float metersPerSecond =( Float.parseFloat(speedText) * 5f) /18f;
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.DriveMate",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(getString(R.string.delayKey),seekBar.getProgress());
+        editor.putInt(getString(R.string.delayKey),progressValue);
         editor.commit();
         editor.putFloat(getString(R.string.speedValues), metersPerSecond);
         editor.commit();
