@@ -70,6 +70,7 @@ public class AppActivity extends Activity {
                 if (saved) {
                     Intent intent = new Intent(context, FdActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     showDialog();
                 }
