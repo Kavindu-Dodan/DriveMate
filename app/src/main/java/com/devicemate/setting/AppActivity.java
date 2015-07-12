@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.SeekBar;
 
 import com.devicemate.R;
 import com.devicemate.core.FdActivity;
+import com.devicemate.game.drive_mate_game;
 
 
 public class AppActivity extends Activity {
@@ -62,13 +64,14 @@ public class AppActivity extends Activity {
 
 		button = (Button) findViewById(R.id.nextbutton);
 
+
 		button.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
                 if (saved) {
-                    Intent intent = new Intent(context, FdActivity.class);
+                    Intent intent = new Intent(context, drive_mate_game.class);
                     startActivity(intent);
                     finish();
                 } else {

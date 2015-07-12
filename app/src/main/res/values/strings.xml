@@ -6,6 +6,9 @@
     <string name="send_button">Next</string>
     <string name="delayKey">TimeDelayKey</string>
     <string name="speedValues">SpeedValueKey</string>
+    <string name="title_activity_drive_mate_game">Game</string>
+
+    <string name="hello_world">Hello world!</string>
 
 
 </resources>
